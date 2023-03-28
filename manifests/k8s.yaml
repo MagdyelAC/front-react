@@ -16,7 +16,7 @@ spec:
       containers:
       - name: {model_name_test}-container
         #image: gcr.io/tensorflow-serving/resnet 
-        image: docker.io/{docker_user}/{model_name_test}:{github.sha}
+        image: docker.io/{docker_user}/{model_name}:{github.sha}
         ports:
         - containerPort: 80
 ---
@@ -24,8 +24,8 @@ apiVersion: v1
 kind: Service
 metadata:
   labels:
-    run: {model_name}-service
-  name: {model_name}-service
+    run: {model_name_test}-service
+  name: {model_name_test}-service
 spec:
   ports:
   - port: 80

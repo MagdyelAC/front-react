@@ -1,4 +1,4 @@
-name: master CI, CD workflow 
+name: release CI, CD workflow 
 on: 
   push:
     branches: [ "master"]
@@ -13,11 +13,11 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: 16.x
-      - name: npm install
+      - name: nmp install
         run: npm install
-   #   - name: Test
-   #    run: |
-   #     npm test -- --no-watch --no-progress --browsers=ChromeHeadlessCI
+#      - name: Test
+#        run: |
+#          npm test -- --no-watch --no-progress --browsers=ChromeHeadlessCI
       - name: make .env 
         uses: SpicyPizza/create-envfile@v1.3
         with:
@@ -31,7 +31,7 @@ jobs:
       
       - name: show dir, .env file
         run: |
-          ls -la build 
+          ls -la build
           
       - name: download, run httpd image, container name serving_base
         run: |
@@ -83,3 +83,8 @@ jobs:
           namespace: ${{secrets.OKTETO_NAMESPACE }}
           manifest: manifests/k8s.yaml
           tag: ${{ secrets.DOCKER_USERNAME }}/${{secrets.MODEL_NAME}}:${{github.sha}}
+          
+          
+          
+          
+#To-do list: Update data of accounts if it's neccesary

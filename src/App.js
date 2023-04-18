@@ -1,4 +1,5 @@
 import imageRickMorty from './img/rick-morty.png';
+import credencial from './img/credencial.jpeg';
 import './App.css';
 import { useState } from 'react';
 import Characters from './components/Characters';
@@ -16,7 +17,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1 className="title">Rick y Morty</h1>
+        <h1 className="title">Rick and Morty</h1>
         {characters ? (
           <Characters characters={characters} setCharacters={setCharacters} />
         ) : (
@@ -27,6 +28,9 @@ function App() {
             </button>
           </>
         )} 
+        <h1 className="nombre">Magdyel Aguilar Cid</h1>
+        <h1 className="matricula">S20020309</h1>
+        <img src={credencial} alt="credencial" className='img-cred' />
       </header>
     </div>
   );

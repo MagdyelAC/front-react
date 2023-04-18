@@ -1,21 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+
 body {
   margin: 0;
   font-family: "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
     "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: black;
+  background-image: url(img/background.png);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center center;
+  background-size: contain;
+  
+  
 }
 
 .title {
-  color: #738f93;
-  font-size: 40px;
-  font-family: fantasy, sans-serif;
+  color: #05d3ee;
+  font-size: 50px;
+  font-family: "Permanent Marker";
   margin-bottom: 0;
+  -webkit-text-stroke: 1.5px rgb(255, 255, 255);
+  display: flex;
+  justify-content: center;
+}
+
+.nombre, .matricula{
+  color: #0905ee;
+  font-size: 50px;
+  font-family: 'Times New Roman', Times, serif;
+  margin-bottom: 0;
+  -webkit-text-stroke: 1.5px rgb(255, 255, 255);
+  display: flex;
+  justify-content: center;
 }
 
 .img-home {
-  width: 500px;
+  width: 400px;
   padding: 50px;
+  margin: auto;
+  display: block;
+}
+
+.img-cred {
+  width: 200px;
+  margin: auto;
+  display: block;
 }
 
 .btn-search {
@@ -30,12 +61,16 @@ body {
   min-height: 2.778em;
   border: none;
   cursor: pointer;
+  display: block;
+  padding: 0.5rem 1rem;
+  width: 200px;
+  margin: 0 auto;
 }
 
 .btn-search:hover {
-  background-color: #ffffff;
-  border: 1px solid #1ba94c;
-  color: #1ba94c;
+  background-color: #80f88a;
+  border: 1px solid #6beb98;
+  color: #000000;
 }
 
 .characters {
@@ -55,7 +90,7 @@ body {
 
 .character-container {
   display: flex;
-  background: #3c3e44;
+  background: #4c78fa;
   margin: 20px 10px;
   border-radius: 10px;
   align-items: flex-start;
@@ -124,6 +159,11 @@ body {
   text-decoration: underline;
   cursor: pointer;
   font-size: 15px;
+  color: #1ba94c;
+}
+
+.back-home:hover {
+  color: #006eff;
 }
 
 @media (max-width: 768px) {

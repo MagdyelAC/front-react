@@ -1,11 +1,11 @@
-name: release CI, CD workflow 
+name: develop CI, CD workflow 
 on: 
   push:
-    branches: [ "master"]
+    branches: [ "develop"]
   pull_request:
-    branches: [ "master"]
+    branches: [ "develop"]
 jobs:
-  master_ci_cd:
+  develop_ci_cd:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2

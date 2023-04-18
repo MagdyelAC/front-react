@@ -86,8 +86,5 @@ jobs:
           namespace: ${{secrets.OKTETO_NAMESPACE }}
           manifest: manifests/k8s.yaml
           tag: ${{ secrets.DOCKER_USERNAME }}/${{secrets.MODEL_NAME_TEST}}:${{github.sha}}
-          
-          
-          
-          
+                  
 #To-do list: Update data of accounts if it's neccesary

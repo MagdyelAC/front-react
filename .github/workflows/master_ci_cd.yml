@@ -1,4 +1,4 @@
-name: release CI, CD workflow 
+name: develop CI, CD workflow 
 on: 
   push:
     branches: [ "release"]

@@ -13,7 +13,7 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: 16.x
-      - name: nmp install
+      - name: npm install
         run: npm install
 #      - name: Test
 #        run: |
@@ -25,7 +25,7 @@ jobs:
           file_name: .env
           fail_on_empty: false
           
-      - name: build angular, output in dist/openai
+      - name: build react, output in build
         run: |
           npm run build
       
@@ -43,7 +43,7 @@ jobs:
           
       - name: Build the custom Docker image
         run: docker commit --change "ENV MODEL_NAME_TEST ${{secrets.MODEL_NAME_TEST}}" serving_base ${{secrets.DOCKER_USER}}/${{secrets.MODEL_NAME_TEST}}:${{github.sha}}
-
+      
       - name: show docker images
         run: docker images
 
@@ -86,5 +86,3 @@ jobs:
           namespace: ${{secrets.OKTETO_NAMESPACE }}
           manifest: manifests/k8s.yaml
           tag: ${{ secrets.DOCKER_USERNAME }}/${{secrets.MODEL_NAME_TEST}}:${{github.sha}}
-                  
-#To-do list: Update data of accounts if it's neccesary
